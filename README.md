@@ -1,5 +1,7 @@
 
-# Rotorflight
+![Rotorflight](https://github.com/rotorflight/rotorflight/blob/master/images/rotorflight2.png?raw=true)
+
+***
 
 Rotorflight is a Flight Control software suite for single-rotor helicopters.
 
