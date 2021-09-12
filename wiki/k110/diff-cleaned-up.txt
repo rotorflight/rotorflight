@@ -1,0 +1,179 @@
+# 
+
+# diff
+###WARNING: NO CUSTOM DEFAULTS FOUND###
+
+# version
+# Rotorflight / STM32F411 (S411) 0.1.0 Sep 10 2021 / 18:32:02 (norevision) MSP API: 1.43
+###ERROR: diff: NO CONFIG FOUND###
+# start the command batch
+batch start
+
+board_name NOX
+manufacturer_id AIRB
+
+# name: K110
+
+# resources
+resource BEEPER 1 C13
+resource MOTOR 1 A07
+resource MOTOR 2 B08
+resource SERVO 1 B07
+resource SERVO 2 A00
+resource SERVO 3 A02
+resource SERIAL_TX 1 B06
+resource SERIAL_RX 2 A03
+resource LED 1 A04
+resource SPI_SCK 2 B13
+resource SPI_MISO 2 B14
+resource SPI_MOSI 2 B15
+resource ADC_BATT 1 A05
+resource GYRO_EXTI 1 A08
+resource GYRO_CS 1 B12
+
+# timer
+timer A07 AF1
+# pin A07: TIM1 CH1N (AF1)
+timer B08 AF3
+# pin B08: TIM10 CH1 (AF3)
+timer A00 AF1
+# pin A00: TIM2 CH1 (AF1)
+timer A02 AF1
+# pin A02: TIM2 CH3 (AF1)
+timer A03 AF3
+# pin A03: TIM9 CH2 (AF3)
+timer B07 AF2
+# pin B07: TIM4 CH2 (AF2)
+timer B06 AF2
+# pin B06: TIM4 CH1 (AF2)
+
+# dma
+dma ADC 1 1
+# ADC 1: DMA2 Stream 4 Channel 0
+dma UART_TX 1 0
+# UART_TX 1: DMA2 Stream 7 Channel 4
+
+# feature
+feature RX_SERIAL
+feature GOVERNOR
+feature RPM_FILTER
+
+# servo
+servo 1 1500 -500 500 670 20 0
+servo 2 1500 -500 500 670 -70 0
+servo 3 1500 -500 500 -670 -70 0
+
+# mixer input
+mixer input SR -900 900 730
+mixer input SP -900 900 730
+mixer input SY -1000 1000 1000
+mixer input SC -1000 1000 800
+mixer input ST 0 1000 1000
+
+# mixer rule
+mixer rule 0 add SC S1 500 0 
+mixer rule 1 add SC S2 500 0 
+mixer rule 2 add SC S3 500 0 
+mixer rule 3 add SR S2 866 0 
+mixer rule 4 add SR S3 -866 0 
+mixer rule 5 add SP S1 -1000 0 
+mixer rule 6 add SP S2 500 0 
+mixer rule 7 add SP S3 500 0 
+mixer rule 8 set ST M1 1000 0 
+mixer rule 9 set SY M2 1000 0 
+
+# map
+map AETRC123
+
+# serial
+serial 0 128 115200 57600 0 2000000
+serial 1 64 115200 57600 0 115200
+
+# aux
+aux 0 0 0 1650 2100 0 0
+aux 1 2 0 1825 1950 0 0
+aux 2 3 0 1950 2100 0 0
+aux 3 26 2 975 2050 0 0
+
+# adjfunc
+adjfunc 0 1 1500 1550 10 2 1 0 200
+adjfunc 1 1 1550 1600 11 2 1 0 200
+adjfunc 2 1 1600 1650 12 0 1 0 200
+adjfunc 3 1 1650 1725 14 2 1 0 200
+adjfunc 4 1 1725 1775 15 2 1 0 200
+adjfunc 5 1 1775 1825 16 2 1 0 200
+adjfunc 6 1 1825 1900 18 2 1 0 200
+adjfunc 7 1 1900 1950 19 2 1 0 200
+adjfunc 8 1 1950 2025 20 2 1 0 200
+adjfunc 9 1 1000 1100 39 2 0 0 2
+
+# master
+set acc_calibration = -30,185,203,1
+set mag_hardware = NONE
+set baro_hardware = NONE
+set min_check = 1000
+set max_check = 2000
+set serialrx_provider = SBUS
+set dshot_bidir = ON
+set motor_pwm_protocol = DSHOT600
+set motor_poles = 6,12,0,0
+set align_board_roll = 180
+set align_board_yaw = 135
+set current_meter = ADC
+set battery_meter = ADC
+set beeper_inversion = ON
+set beeper_od = OFF
+set tail_rotor_mode = MOTORIZED
+set tail_motor_idle = 15
+set swash_ring = 100
+set gov_mode = MODE2
+set gov_max_headspeed = 4500
+set gov_gear_ratio = 8000
+set gov_tta_gain = 50
+set gov_tta_limit = 25
+set gps_sbas_mode = AUTO
+set gps_auto_config = OFF
+set system_hse_mhz = 8
+set debug_mode = GYRO_SCALED
+set flash_spi_bus = 1
+set gyro_1_bustype = SPI
+set gyro_1_spibus = 2
+set gyro_1_sensor_align = CW180
+set gyro_1_align_yaw = 1800
+set gyro_rpm_filter_bank_motor_index = 1,1,1,1,1,1,1,1,2,2,2,0,0,0,0,0
+set gyro_rpm_filter_bank_gear_ratio = 7960,8040,3975,4025,2667,2000,1600,1000,1000,500,333,0,0,0,0,0
+set gyro_rpm_filter_bank_notch_q = 200,200,200,200,200,200,200,200,200,200,200,0,0,0,0,0
+set gyro_rpm_filter_bank_min_hz = 33,33,67,67,100,133,167,267,33,67,100,0,0,0,0,0
+set name = K110
+
+profile 0
+
+# profile 0
+set p_pitch = 55
+set i_pitch = 110
+set f_pitch = 60
+set p_roll = 60
+set i_roll = 105
+set f_roll = 60
+set p_yaw = 55
+set i_yaw = 15
+set d_yaw = 40
+set rescue_collective = 600
+
+rateprofile 0
+
+# rateprofile 0
+set roll_rc_rate = 160
+set pitch_rc_rate = 160
+set yaw_rc_rate = 204
+set roll_expo = 30
+set pitch_expo = 30
+set yaw_expo = 50
+set roll_srate = 0
+set pitch_srate = 0
+set yaw_srate = 0
+
+# end the command batch
+batch end
+
+# 
