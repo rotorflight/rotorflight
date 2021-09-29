@@ -96,7 +96,10 @@ Rotorflight also borrows ideas and code from Heliflight-3D, another Betaflight f
 So thanks goes to all those whom have contributed along the way.
 
 Origins for Rotorflight:
-* **Dr.Rudder** (author, maintainer)
+* **Dr.Rudder** - author, maintainer
+* **pkaig** - wiki, beta-testing
+* **egon** - wiki, beta-testing
+* **Rob Haswell (mopatop)** - wiki, beta-testing
 
 Origins for Heliflight-3D:
 * **James-T1** (author)
