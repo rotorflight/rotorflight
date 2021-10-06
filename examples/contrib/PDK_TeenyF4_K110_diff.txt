@@ -1,0 +1,227 @@
+################################################################
+#    Board configuration file for PDK's (pkaig) K110 test helicopter 
+#    with TeenyF4 Pro 16x16 FC, 
+#    HAKRC 10Ax4 BLHELI_S ESC flashed Bluejay firmware for Bi-Dir DSHOT 
+# 	 SBUS RX, NO VIDEO.
+##########################
+ 
+# version
+# Rotorflight / STM32F405 (S405) 4.2.9 Sep 23 2021 / 21:30:48 (norevision) MSP API: 1.43
+
+board_name OMNIBUSF4SD
+manufacturer_id AIRB
+
+# name: TeenyF4
+
+# resources
+resource BEEPER 1 B04
+resource MOTOR 1 B06
+resource MOTOR 2 A02
+resource SERVO 1 B00
+resource SERVO 2 B01
+resource SERVO 3 A03
+resource PPM 1 B08
+resource PWM 1 B08
+resource PWM 2 B09
+resource PWM 3 C06
+resource PWM 4 C07
+resource PWM 5 C08
+resource PWM 6 C09
+resource SONAR_TRIGGER 1 A01
+resource SONAR_ECHO 1 A08
+resource LED_STRIP 1 B06
+resource SERIAL_TX 1 A09
+resource SERIAL_TX 3 B10
+resource SERIAL_TX 6 C06
+resource SERIAL_RX 1 A10
+resource SERIAL_RX 3 B11
+resource SERIAL_RX 6 C07
+resource INVERTER 3 C09
+resource INVERTER 6 C08
+resource LED 1 B05
+resource SPI_SCK 1 A05
+resource SPI_SCK 2 B13
+resource SPI_SCK 3 C10
+resource SPI_MISO 1 A06
+resource SPI_MISO 2 B14
+resource SPI_MISO 3 C11
+resource SPI_MOSI 1 A07
+resource SPI_MOSI 2 B15
+resource SPI_MOSI 3 C12
+resource ADC_BATT 1 C02
+resource ADC_RSSI 1 A00
+resource ADC_CURR 1 C01
+resource BARO_CS 1 B03
+resource SDCARD_CS 1 B12
+resource SDCARD_DETECT 1 B07
+resource FLASH_CS 1 B12
+resource GYRO_EXTI 1 C04
+resource GYRO_CS 1 A04
+resource USB_DETECT 1 C05
+
+# feature
+feature RX_SERIAL
+feature GOVERNOR
+feature RPM_FILTER
+
+# servo
+servo 1 1500 -500 500 500 32 0
+servo 2 1500 -500 500 500 0 0							 
+servo 3 1500 -500 500 -500 -50 0
+
+# mixer input
+mixer input SR -1000 1000 1000
+mixer input SP -1000 1000 1000
+mixer input SY -1000 1000 1000
+mixer input SC -1000 1000 1000
+mixer input ST 0 1000 1000
+
+# mixer rule
+# rules    i  OP SRC DST WEIGHT OFFSET MODES						
+#-----------------------------------------						
+# Collective ------------------------						
+mixer rule  0 add SC S1   500 0						
+mixer rule  1 add SC S2   500 0						
+mixer rule  2 add SC S3   500 0						
+# Roll ------------------------------						
+mixer rule  3 add SR S2   866 0						
+mixer rule  4 add SR S3  -866 0						
+# Pitch -----------------------------						
+mixer rule  5 add SP S1 -1000 0						
+mixer rule  6 add SP S2   500 0						
+mixer rule  7 add SP S3   500 0						
+# Roll to Pitch interaction ---------						
+mixer rule  8 add SR S1     0 0						
+mixer rule  9 add SR S2     0 0						
+mixer rule 10 add SR S3     0 0						
+# Pitch to Roll interaction ---------						
+mixer rule 11 add SP S2     0 0						
+mixer rule 12 add SP S3     0 0	
+# Motors
+mixer rule 13 set ST M1 1000 0 
+mixer rule 14 set SY M2 1000 0 
+#-------------------------------------
+
+# map
+map AETR1C23
+
+# serial
+serial 0 64 115200 57600 0 115200
+serial 5 64 115200 57600 0 115200
+
+# aux
+aux 0 0 1 1500 1650 0 0
+aux 1 3 1 1550 1625 0 0
+
+# master
+set gyro_lowpass_hz = 0
+set gyro_lowpass2_hz = 0
+set gyro_notch1_hz = 66
+set gyro_notch1_cutoff = 15
+set gyro_dyn_lpf_min_hz = 0
+set gyro_dyn_lpf_max_hz = 0
+set dterm_dyn_lpf_min_hz = 0
+set dterm_dyn_lpf_max_hz = 0
+set dterm_lowpass_type = BIQUAD
+set dterm_lowpass_hz = 93
+set dterm_lowpass2_hz = 0
+set acc_calibration = 130,-159,266,1
+set mag_bustype = I2C
+set mag_i2c_device = 2
+set baro_spi_device = 3
+set max_check = 1950
+set rc_smoothing_derivative_type = BIQUAD
+set rc_smoothing_auto_smoothness = 66
+set serialrx_provider = SBUS
+set adc_device = 2
+set dshot_burst = ON
+set dshot_bitbang = ON
+set dshot_bitbang_timer = TIM1
+set motor_pwm_protocol = DSHOT600
+set motor_poles = 6,12,6,6
+set motor_rpm_lpf = 10,10,10,10
+set align_board_pitch = 180
+set align_board_yaw = 270
+set vbat_max_cell_voltage = 420
+set vbat_min_cell_voltage = 300
+set current_meter = ADC
+set battery_meter = ADC
+set tail_rotor_mode = MOTORIZED
+set tail_motor_idle = 15
+set swash_ring = 100
+set gov_mode = MODE2
+set gov_max_headspeed = 4500
+set gov_gear_ratio = 8000
+set gov_pwr_filter = 10
+set gov_rpm_filter = 10
+set gov_gain = 50
+set gov_p_gain = 40
+set gov_i_gain = 60
+set gov_f_gain = 15
+set gov_tracking_time = 50
+set gov_recovery_time = 30
+set gov_lost_headspeed_timeout = 30
+set gov_tta_gain = 20
+set gov_tta_limit = 20
+set servo_pwm_rate = 280
+set gps_sbas_mode = AUTO
+set gps_auto_config = OFF
+set deadband = 2
+set yaw_deadband = 2
+set pid_process_denom = 2
+set debug_mode = GYRO_SCALED
+set flash_spi_bus = 2
+set gyro_1_bustype = SPI
+set gyro_1_spibus = 1
+set gyro_2_spibus = 1
+set gyro_2_sensor_align = CW90
+set gyro_2_align_yaw = 900
+set gyro_rpm_filter_bank_motor_index = 1,1,1,1,1,1,1,1,2,2,2,0,0,0,0,0
+set gyro_rpm_filter_bank_gear_ratio = 7960,8040,3975,4025,2667,2000,1600,1000,1000,500,333,0,0,0,0,0
+set gyro_rpm_filter_bank_notch_q = 200,200,200,200,200,200,200,200,200,200,200,0,0,0,0,0
+set gyro_rpm_filter_bank_min_hz = 33,33,67,67,100,133,167,267,33,67,100,0,0,0,0,0
+set gyro_rpm_filter_bank_max_hz = 4000,4000,4000,4000,4000,4000,4000,4000,4000,4000,4000,4000,4000,4000,4000,4000
+set name = TeenyF4
+
+profile 0
+
+# profile 0
+set iterm_relax_cutoff = 20
+set iterm_limit = 400
+set iterm_decay = 20
+set p_pitch = 90
+set i_pitch = 164
+set d_pitch = 25
+set f_pitch = 70
+set p_roll = 80
+set i_roll = 135
+set d_roll = 15
+set f_roll = 70
+set p_yaw = 25
+set i_yaw = 8
+set d_yaw = 20
+set rescue_collective = 400
+set rescue_boost = 200
+set rescue_delay = 20
+set abs_control_gain = 30
+set abs_control_cutoff = 11
+set yaw_cyclic_ff_gain = 40
+set yaw_collective_ff_impulse_gain = 10
+
+# restore original profile selection
+profile 0
+rateprofile 0
+
+# rateprofile 0
+set roll_rc_rate = 160
+set pitch_rc_rate = 160
+set yaw_rc_rate = 204
+set roll_expo = 30
+set pitch_expo = 30
+set yaw_expo = 50
+set roll_srate = 0
+set pitch_srate = 0
+set yaw_srate = 0
+
+# restore original rateprofile selection
+rateprofile 0
