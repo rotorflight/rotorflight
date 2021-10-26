@@ -8,7 +8,7 @@ Rotorflight is a Flight Control software suite for single-rotor helicopters.
 It is based on Betaflight 4.2, with many advanced features added for helicopters.
 Rotorflight does **NOT** support multi-rotor crafts, nor airplanes; it is only for traditinal RC helicopters.
 
-**WARNING!** Rotorflight is **WORK-IN-PROGRESS**. It is not ready **YET** for it's prime time.
+**WARNING!** Rotorflight is **WORK-IN-PROGRESS**. It is in beta-testing at the moment.
 
 
 ## Information
@@ -21,17 +21,21 @@ For latest information, please see [Rotorflight Wiki](https://github.com/rotorfl
 Rotorflight has many features:
 
 * PID control tuned for helicopter use
-* Fully customisable feedforward between collective/cyclic/yaw
 * Rotor speed governor
+* Tail Torque Assist (TTA/TALY)
+* Piro compensation
+* Two-stage rescue
+* Fully customisable feedforward between collective/cyclic/yaw
 * Advanced gyro filtering for helicopters
   - Advanced dynamic LPF
   - Dynamic RPM based notch filter banks
-* Fully customisable servo/motor mixer
-* Flexible servo configuration
+* Fully customisable servo/motor configuration & mixer
 * Irrelevant (multi-rotor) features removed
+* AND MUCH MORE
 
 Plus lots of features inherited from Betaflight:
 
+* Black-box logging
 * Configuration profiles for changing various tuning parameters
 * Multi-color RGB LEDs
 * Configurable buzzer sounds
@@ -41,8 +45,6 @@ Plus lots of features inherited from Betaflight:
 * Voltage inputs for RSSI, battery voltage, current sensors, etc.
 * Fully integrated OSD
 * Fully integrated video TX control (Unify Pro, IRC Tramp, etc.)
-
-And many more...
 
 
 ## Hardware support
@@ -63,12 +65,12 @@ An absolute minimum is a STM32F4 based board, but it probably won't be able to r
 
 ## Installation
 
-Please see the "Releases" page on this Github repo to download the latest official release for your FC board:
-* [Click here to go to Releases](https://github.com/rotorflight/rotorflight-firmware/releases)
+Please see the [Wiki](https://github.com/rotorflight/rotorflight/wiki) for instructions.
 
-**Ignore** any snapshots on this page (github is showing them automatically).
-
-Eventually Rotorflight firmware will be available directly via the Configurator.
+For downloading the latest versions, go to the "Releases" page on each GitHub repo:
+* [Firmware Releases](https://github.com/rotorflight/rotorflight-firmware/releases)
+* [Configurator Releases](https://github.com/rotorflight/rotorflight-configurator/releases)
+* [Blackbox Releases](https://github.com/rotorflight/rotorflight-blackbox/releases)
 
 
 ## Contributing
@@ -99,7 +101,7 @@ Origins for Rotorflight:
 * **Dr.Rudder** - author, maintainer
 * **pkaig** - wiki, beta-testing
 * **egon** - wiki, beta-testing
-* **Rob Haswell (mopatop)** - wiki, beta-testing
+* **mopatop** - wiki, beta-testing
 
 Origins for Heliflight-3D:
 * **James-T1** (author)
