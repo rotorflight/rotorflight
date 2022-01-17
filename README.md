@@ -27,24 +27,23 @@ Rotorflight has many features:
 * Two-stage rescue
 * Fully customisable feedforward between collective/cyclic/yaw
 * Advanced gyro filtering for helicopters
-  - Advanced dynamic LPF
   - Dynamic RPM based notch filter banks
+  - Advanced dynamic LPF
 * Fully customisable servo/motor configuration & mixer
-* Irrelevant (multi-rotor) features removed
 * AND MUCH MORE
 
 Plus lots of features inherited from Betaflight:
 
 * Black-box logging
 * Configuration profiles for changing various tuning parameters
-* Multi-color RGB LEDs
-* Configurable buzzer sounds
 * Multiple ESC protocols: DShot (150,300,600), Multishot, Oneshot, and traditional PWM
 * Multiple ESC telemetry protocols: KISS, HW
 * Multiple RX telemetry protocols: CSRF, FrSky, HoTT, MSP, etc.
 * Voltage inputs for RSSI, battery voltage, current sensors, etc.
 * Fully integrated OSD
 * Fully integrated video TX control (Unify Pro, IRC Tramp, etc.)
+* Configurable buzzer sounds
+* Multi-color RGB LEDs
 
 
 ## Hardware support
@@ -68,9 +67,9 @@ An absolute minimum is a STM32F4 based board, but it probably won't be able to r
 Please see the [Wiki](https://github.com/rotorflight/rotorflight/wiki) for instructions.
 
 For downloading the latest versions, go to the "Releases" page on each GitHub repo:
-* [Firmware Releases](https://github.com/rotorflight/rotorflight-firmware/releases)
 * [Configurator Releases](https://github.com/rotorflight/rotorflight-configurator/releases)
 * [Blackbox Releases](https://github.com/rotorflight/rotorflight-blackbox/releases)
+* [LUA Scripts Releases](https://github.com/rotorflight/rotorflight-lua-scripts/releases)
 
 
 ## Contributing
