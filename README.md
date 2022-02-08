@@ -56,10 +56,11 @@ Also, the FC boards are typically labeled for multi-rotor use - thus the user ne
 functions can be used for a different purpose with helicopters. Usually this is just about using some
 of the motor outputs for servos, but in some cases a more advanced remapping may be needed.
 
-It is highly recommended to use a STM32F7 based flight controller, as Rotorflight greatly benefits from
-the latest filtering algorithms and other new features that are all CPU intensive.
+It is recommended to use a STM32F7 or STM32F4 based flight controller, as Rotorflight greatly benefits from
+the latest filtering algorithms and other new features that are all CPU intensive. The faster F405 is a better 
+option than the older and slower F411, but both can be made to work.
 
-An absolute minimum is a STM32F4 based board, but it probably won't be able to run all the new features.
+The old F3 flight controllers are not supported.
 
 
 ## Installation
@@ -101,6 +102,7 @@ Origins for Rotorflight:
 * **pkaig** - wiki, beta-testing
 * **egon** - wiki, beta-testing
 * **mopatop** - wiki, beta-testing
+* **Mike_PSL** - wiki
 
 Origins for Heliflight-3D:
 * **James-T1** (author)
