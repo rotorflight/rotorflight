@@ -67,7 +67,10 @@ The old F3 flight controllers are not supported.
 
 Please see the [Wiki](https://github.com/rotorflight/rotorflight/wiki) for instructions.
 
-For downloading the latest versions, go to the "Releases" page on each GitHub repo:
+For downloading the latest version, please see [News](https://github.com/rotorflight/rotorflight/wiki/News).
+
+Or go directly to the "Releases" page on each GitHub repo:
+
 * [Configurator Releases](https://github.com/rotorflight/rotorflight-configurator/releases)
 * [Blackbox Releases](https://github.com/rotorflight/rotorflight-blackbox/releases)
 * [LUA Scripts Releases](https://github.com/rotorflight/rotorflight-lua-scripts/releases)
