@@ -3,12 +3,24 @@
 
 ***
 
-Rotorflight is a Flight Control software suite for single-rotor helicopters.
+Rotorflight is a Flight Control/FBL Software Suite for traditional single-rotor RC helicopters.
 
-It is based on Betaflight 4.2, with many advanced features added for helicopters.
-Rotorflight does **NOT** support multi-rotor crafts, nor airplanes; it is only for traditinal RC helicopters.
+It is based on Betaflight 4.2, enjoying all the great features of the Betaflight platform, plus many new features added for helicopters. Rotorflight borrows ideas and code also from Heliflight3D, an earlier fork of Betaflight for helicopters.
 
-**WARNING!** Rotorflight is **WORK-IN-PROGRESS**. It is in beta-testing at the moment.
+Rotorflight does **NOT** support multi-rotor crafts, nor airplanes; it is only for traditinal RC helicopters, including co-axial and tandem helicopters.
+
+
+## NEWS
+
+The first official version of **Rotorflight** v1.0 is now available!
+
+Please download the latest version here:
+
+- The Configurator is available for download [here](https://github.com/rotorflight/rotorflight-configurator/releases/tag/release/1.0.0).
+- The Blackbox is available for download [here](https://github.com/rotorflight/rotorflight-blackbox/releases/tag/release/1.0.0-RC2).
+- The Transmitter LUA scripts are available for download [here](https://github.com/rotorflight/rotorflight-lua-scripts/releases/tag/release/1.0.0).
+
+and follow the instructions in the [Wiki](https://github.com/rotorflight/rotorflight/wiki/Installing-Rotorflight-Firmware).
 
 
 ## Information
@@ -20,30 +32,29 @@ For latest information, please see [Rotorflight Wiki](https://github.com/rotorfl
 
 Rotorflight has many features:
 
-* PID control tuned for helicopter use
-* Rotor speed governor
-* Tail Torque Assist (TTA/TALY)
-* Piro compensation
-* Two-stage rescue
-* Fully customisable feedforward between collective/cyclic/yaw
+* Great GUI application for setting up and configuration
+* Advanced PID control, tuned for helicopters
+* Main rotor speed governor
+* Precompensation between collective/cyclic/yaw
 * Advanced gyro filtering for helicopters
   - Dynamic RPM based notch filter banks
   - Advanced dynamic LPF
-* Fully customisable servo/motor configuration & mixer
-* AND MUCH MORE
+* Fully customisable servo/motor mixer
+* Flexible servo configuration
+* Flight Profiles (Banks)
+* In-flight settings adjustment from RC channels
 
 Plus lots of features inherited from Betaflight:
 
-* Black-box logging
-* Configuration profiles for changing various tuning parameters
-* Multiple ESC protocols: DShot (150,300,600), Multishot, Oneshot, and traditional PWM
-* Multiple ESC telemetry protocols: KISS, HW
+* Blackbox Flight logger
+* Multiple ESC protocols: DShot, Multishot, Oneshot, and traditional PWM
 * Multiple RX telemetry protocols: CSRF, FrSky, HoTT, MSP, etc.
-* Voltage inputs for RSSI, battery voltage, current sensors, etc.
-* Fully integrated OSD
-* Fully integrated video TX control (Unify Pro, IRC Tramp, etc.)
-* Configurable buzzer sounds
+* Telemetry inputs for RSSI, battery voltage, current sensors, etc.
 * Multi-color RGB LEDs
+* Configurable buzzer sounds
+* GPS support
+
+And many more...
 
 
 ## Hardware support
@@ -80,67 +91,38 @@ Or go directly to the "Releases" page on each GitHub repo:
 
 Contributions are welcome and encouraged. You can contribute in many ways:
 
-* Testing Rotorflight with different types of helicopters
-* Documentation updates and corrections
-* Writing How-To guides
-* Bug reports
-* New ideas & suggestions
-* Provide a new translation for configurator
-* Implement a new feature or a fix in the firmware
+ - testing Rotorflight with different types of helicopters
+ - improving the documentation in the Wiki
+ - writing How-To guides
+ - provide a new translation for the configurator
+ - implement new features or fix bugs
+ - reporting bugs
+ - new ideas & suggestions
+ - helping other users
 
 Please see [Wiki](https://github.com/rotorflight/rotorflight/wiki/Contributing) for details.
 
+## Credits
 
-## Open Source / Contributors
-
-Rotorflight is software that is **open source** and is available free of charge without warranty to all users.
+Rotorflight is Free Software. Meaning, it is available free of charge _without warranty_, the source code is available, and it is supported by the users themselves as a community. Rotorflight is under the GPLv3 license.
 
 Rotorflight is forked from Betaflight, which in turn is forked from Cleanflight.
-Rotorflight also borrows ideas and code from Heliflight-3D, another Betaflight fork for helis.
+Rotorflight borrows ideas and code also from Heliflight-3D, another Betaflight fork for helis.
 
 So thanks goes to all those whom have contributed along the way.
 
 Origins for Rotorflight:
-* **Dr.Rudder** - author, maintainer
-* **pkaig** - wiki, beta-testing
-* **egon** - wiki, beta-testing
-* **mopatop** - wiki, beta-testing
-* **Mike_PSL** - wiki
+ - **Petri Mattila** (Dr.Rudder) - author, maintainer
+ - **pkaig** - wiki, resource mapping, testing
+ - **egon** - wiki, Dutch translation, Lua Scripts, testing
+ - **mopatop** - wiki, testing
+ - **Mike_PSL** - wiki, testing
+ - **mattis** - German translation, testing
+ - **Simon Stummer** (simonsummer) - testing
 
 Origins for Heliflight-3D:
-* **James-T1** (author)
-* **Dr.Rudder**
-* **Westie**
-
-Origins for Betaflight (Thanks!):
-* **Alexinparis** (for MultiWii),
-* **timecop** (for Baseflight),
-* **Dominic Clifton** (for Cleanflight),
-* **borisbstyle** (for Betaflight), and
-* **Sambas** (for the original STM32F4 port).
-
-The Betaflight Configurator is forked from Cleanflight Configurator and its origins.
-
-Origins for Betaflight Configurator:
-* **Dominic Clifton** (for Cleanflight configurator), and
-* **ctn** (for the original Configurator).
-
-Big thanks to current and past contributors:
-* Budden, Martin (martinbudden)
-* Bardwell, Joshua (joshuabardwell)
-* Blackman, Jason (blckmn)
-* ctzsnooze
-* Höglund, Anders (andershoglund)
-* Ledvina, Petr (ledvinap) - **IO code awesomeness!**
-* kc10kevin
-* Keeble, Gary (MadmanK)
-* Keller, Michael (mikeller) - **Configurator brilliance**
-* Kravcov, Albert (skaman82) - **Configurator brilliance**
-* MJ666
-* Nathan (nathantsoi)
-* ravnav
-* sambas - **bringing us the F4**
-* savaga
-* Stålheim, Anton (KiteAnton)
+ - **James-T1** (author)
+ - **Dr.Rudder**
+ - **Westie**
 
 And many many others who haven't been mentioned....
