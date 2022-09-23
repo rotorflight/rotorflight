@@ -1,0 +1,29 @@
+# remove resources											
+resource MOTOR 1 NONE											
+resource MOTOR 2 NONE											
+resource MOTOR 3 NONE											
+resource MOTOR 4 NONE											
+
+# resources											
+resource MOTOR 1     B06	# On S1 pin										
+resource MOTOR 2     B07	# On S2 pin										
+resource SERVO 1     B00	# On S3 pin										
+resource SERVO 2     B01	# On S4 pin										
+resource SERVO 3     B04	# On S5 pin										
+resource SERVO 4     NONE											
+
+set tail_rotor_mode = MOTORIZED											
+
+# timers											
+timer  B06   AF2              # M1 - pin B06: TIM4 CH1 (AF2)  											
+timer  B07   AF2              # M2/S4 - pin B07: TIM4 CH2 (AF2)											
+timer  B00   AF2              # S1 - pin B00: TIM3 CH3 (AF2)  											
+timer  B01   AF2              # S2 - pin B01: TIM3 CH4 (AF2)  											
+timer  B04   AF2              # S3 - pin B04: TIM3 CH1 (AF2)  											
+
+# dma											
+dma pin B06 0                 # M1 - 0: DMA1 Stream 0 Channel 2											
+dma pin B07 0                 # M2/S4 - 0: DMA1 Stream 3 Channel 2 											
+dma pin B00 0                 # S1 - 0: DMA1 Stream 7 Channel 5											
+dma pin B01 0                 # S2 - 0: DMA1 Stream 2 Channel 5											
+dma pin B04 0                 # S3 - 0: DMA1 Stream 4 Channel 5											
