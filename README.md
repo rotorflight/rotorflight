@@ -12,12 +12,12 @@ Rotorflight does **NOT** support multi-rotor crafts, nor airplanes; it is only f
 
 ## NEWS
 
-The first official version of **Rotorflight v1.0** is now available!
+The first official version of **Rotorflight v1.0.1** is now available!
 
 Please download the latest version here:
 
-- The Configurator is available for download [here](https://github.com/rotorflight/rotorflight-configurator/releases/tag/release/1.0.0).
-- The Blackbox is available for download [here](https://github.com/rotorflight/rotorflight-blackbox/releases/tag/release/1.0.0-RC2).
+- The Configurator is available for download [here](https://github.com/rotorflight/rotorflight-configurator/releases/tag/release/1.0.1).
+- The Blackbox is available for download [here](https://github.com/rotorflight/rotorflight-blackbox/releases/tag/release/1.0.1).
 - The Transmitter LUA scripts are available for download [here](https://github.com/rotorflight/rotorflight-lua-scripts/releases/tag/release/1.0.0).
 
 and follow the instructions in the [Wiki](https://github.com/rotorflight/rotorflight/wiki/Installing-Rotorflight-Firmware).
