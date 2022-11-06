@@ -12,7 +12,7 @@ Rotorflight does **NOT** support multi-rotor crafts, nor airplanes; it is only f
 
 ## NEWS
 
-The first official version of **Rotorflight v1.0.1** is now available!
+The **Rotorflight v1.0.1** is now available!
 
 Please download the latest version here:
 
