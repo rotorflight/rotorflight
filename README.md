@@ -113,7 +113,7 @@ Big thanks to everyone who has contributed along the journey!
 
 ## Donate
 
-If you find Rotorflight useful, please consider [supporting the development by donating](https://www.paypal.com/donate/?hosted_button_id=LLP4MT8C8TPVJ) to the Rotorflight Project.
+If you find Rotorflight useful, please consider [supporting the development by donating](https://opencollective.com/rotorflight/donate) to the Rotorflight Project.
 
 
 ## Contact
